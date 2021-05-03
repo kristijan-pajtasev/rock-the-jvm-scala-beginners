@@ -7,7 +7,7 @@ object Object extends App{
     val N_EYES = 2
     def canFly: Boolean = false
 
-    def apply(mother: Person, father: Person): Person = Person("Bobby")
+    def apply(mother: Person, father: Person): Person = new Person("Bobby")
   }
 
   class Person(val name: String) {
@@ -29,7 +29,7 @@ object Object extends App{
   println(person1 == person2)
 
   val bobbie = Person.apply(mary, john)
-  val bobbie = Person(mary, john)
+  val bobbie2 = Person(mary, john)
 
   // Scala Applications = Scala object with
   // def main(args: Array[String]): Unit
