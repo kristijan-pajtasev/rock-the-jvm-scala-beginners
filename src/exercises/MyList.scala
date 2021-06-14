@@ -75,14 +75,11 @@ object ListTest extends App {
   print(listOfIntegers.toString)
   print(listOfStrings.toString)
 
-  print(listOfIntegers.map(new Function1[Int, Int] {
-    override def apply(elem: Int): Int = elem * 2
-  }).toString)
+  print(listOfIntegers.map(elem => elem * 2).toString)
 
   println(listOfIntegers ++ anotherListOfIntegers)
-  println(listOfIntegers.flatMap(new Function1[Int, MyList[Int]] {
-    override def apply(elem: Int): MyList[Int] = new Cons(elem, new Cons(elem + 1, Empty))
-  }).toString)
+  println(listOfIntegers.flatMap(elem => new Cons(elem, new Cons(elem + 1, Empty))
+  ).toString)
 
   println(listOfIntegers == cloneListOfIntegers)
 }
